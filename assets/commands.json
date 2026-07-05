@@ -1,0 +1,2378 @@
+{
+  "generated": "2026-07-05",
+  "categories": [
+    "オンボーディング",
+    "イベント",
+    "AI機能",
+    "コミュニティ",
+    "モデレーション",
+    "ユーティリティ"
+  ],
+  "commands": [
+    {
+      "name": "/setup welcome-dm",
+      "description": "新規メンバーへのDM文章を設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "message",
+          "desc": "DM本文（{user}=ユーザー名、{server}=サーバー名）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/setup staff-channel",
+      "description": "ユーザーDMの通知・返信に使うスタッフチャンネルを設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "スタッフチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/setup announce-channel",
+      "description": "イベント告知に使うフォーラムチャンネルを設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "告知フォーラムチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/setup wizard",
+      "description": "🪄 はじめての方向け: 基本設定をまとめて行います",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "staff_channel",
+          "desc": "スタッフ通知チャンネル"
+        },
+        {
+          "name": "language",
+          "desc": "サーバーのデフォルト言語（ja / en）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/post-role-panel",
+      "description": "ロール選択パネルをこのチャンネルに投稿します（最大50ロール・管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "title",
+          "desc": "パネルのタイトル"
+        },
+        {
+          "name": "description",
+          "desc": "パネルの説明文（省略可）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/announce send",
+      "description": "指定チャンネルに即時アナウンスを送信します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "送信先チャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/announce schedule",
+      "description": "アナウンスを日時指定で予約します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "送信先チャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/announce list",
+      "description": "予約中のアナウンス一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/announce repeat",
+      "description": "繰り返し送信するアナウンスを設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "送信先チャンネル"
+        },
+        {
+          "name": "recurrence",
+          "desc": "繰り返しパターン（daily / weekly:0,2,4 / monthly:15）"
+        },
+        {
+          "name": "first_send",
+          "desc": "初回送信日時（JST, YYYY/MM/DD HH:MM）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/announce cancel",
+      "description": "予約アナウンスを取り消します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "announcement_id",
+          "desc": "取り消すアナウンスの番号（/announce list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/log set",
+      "description": "監査ログの出力先を設定して有効化します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "ログを出力するテキストチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/log disable",
+      "description": "監査ログを無効化します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/log status",
+      "description": "監査ログの現在の設定を表示します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/auto_thread add",
+      "description": "自動スレッド対象チャンネルを追加します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "自動スレッドを有効にするテキストチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/auto_thread remove",
+      "description": "自動スレッド対象から外します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "対象から外すテキストチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/auto_thread list",
+      "description": "自動スレッド対象チャンネル一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/sticky set",
+      "description": "固定メッセージを設定します（新着があるたび最下部に再投稿）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "固定メッセージを表示するチャンネル"
+        },
+        {
+          "name": "text",
+          "desc": "固定するメッセージ本文（最大1000文字）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/sticky remove",
+      "description": "固定メッセージを解除します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "固定を解除するチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/sticky list",
+      "description": "固定メッセージの一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/automod setup",
+      "description": "スパム対策の設定を変更します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "自動モデレーションを有効にする"
+        },
+        {
+          "name": "block_invites",
+          "desc": "他サーバーの招待リンクを自動削除する"
+        },
+        {
+          "name": "max_mentions",
+          "desc": "1メッセージ内の許容メンション数（超えるとタイムアウト）"
+        },
+        {
+          "name": "repeat_threshold",
+          "desc": "同一内容の連投とみなす回数"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/automod raid-setup",
+      "description": "参加スパイク（簡易レイド対策）の設定を変更します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "参加スパイク検知を有効にする"
+        },
+        {
+          "name": "join_threshold",
+          "desc": "この人数が時間幅以内に参加したらアラート"
+        },
+        {
+          "name": "join_window_seconds",
+          "desc": "判定に使う時間幅（秒）"
+        },
+        {
+          "name": "auto_lockdown",
+          "desc": "検知時にサーバー認証レベルを自動で引き上げる"
+        },
+        {
+          "name": "lockdown_minutes",
+          "desc": "自動引き上げを維持する時間（分）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/automod status",
+      "description": "自動モデレーション・レイド対策の現在の設定を表示します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/automod lockdown",
+      "description": "サーバーの認証レベルを手動でロックダウン/解除します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "on",
+          "desc": "True=ロックダウンする、False=解除する"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday set",
+      "description": "誕生日を登録します",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "month",
+          "desc": "月（1〜12）"
+        },
+        {
+          "name": "day",
+          "desc": "日（1〜31）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday delete",
+      "description": "誕生日登録を削除します",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday check",
+      "description": "自分の登録済み誕生日を確認します",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday list",
+      "description": "今月の誕生日一覧を表示します",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday channel",
+      "description": "誕生日メッセージを投稿するチャンネルを設定します（管理者）",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "投稿先チャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday role",
+      "description": "誕生日当日に付与するロールを設定します（管理者）",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "付与するロール（翌日自動除去）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/birthday test",
+      "description": "今日の誕生日処理をテスト実行します（管理者）",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy setup",
+      "description": "バディシステムを設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "バディ候補ロール（このロールを持つメンバーからランダムに選出）"
+        },
+        {
+          "name": "enabled",
+          "desc": "有効 / 無効を切り替える"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy checklist",
+      "description": "バディへ送る「やること」チェックリストを編集します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy message",
+      "description": "バディ通知 DM のメッセージ文をカスタマイズします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy channel-category",
+      "description": "バディ専用チャンネルを作成するカテゴリーを設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "category",
+          "desc": "チャンネルを作成するカテゴリー（省略すると未分類に作成）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy close",
+      "description": "指定メンバーのバディチャンネルを手動でクローズします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "対象のメンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy preview",
+      "description": "現在の設定でバディ・新規メンバーに届く Embed をプレビューします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy assign",
+      "description": "手動でバディを割り当てます",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "バディを割り当てる対象メンバー"
+        },
+        {
+          "name": "buddy_member",
+          "desc": "バディとするメンバー（省略するとバディ候補ロールからランダム選出）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy status",
+      "description": "メンバーのバディ割り当て状況を確認します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "確認するメンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy list",
+      "description": "バディ割り当て一覧を表示します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/contribution setup",
+      "description": "貢献度ロールと基本設定をします",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "閾値を超えたメンバーに付与するロール"
+        },
+        {
+          "name": "threshold",
+          "desc": "ロールを付与するスコアの閾値"
+        },
+        {
+          "name": "check_hours",
+          "desc": "自動判定の実行間隔（時間）"
+        },
+        {
+          "name": "half_life_days",
+          "desc": "スコアの半減期（日）— 大きいほど古い活動も重視される"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/contribution weights",
+      "description": "スコアの重みを設定します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "message",
+          "desc": "メッセージ1件あたりの点数"
+        },
+        {
+          "name": "chars",
+          "desc": "文字数1文字あたりの点数"
+        },
+        {
+          "name": "vc_hours",
+          "desc": "VC滞在1時間あたりの点数"
+        },
+        {
+          "name": "event",
+          "desc": "イベント参加1回あたりの点数"
+        },
+        {
+          "name": "tenure_days",
+          "desc": "在籍1日あたりの点数"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/contribution check",
+      "description": "今すぐ貢献度を判定してロールを付与/剥奪します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/contribution ranking",
+      "description": "貢献度ランキングを表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "limit",
+          "desc": "表示人数（最大25人）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/contribution score",
+      "description": "メンバーの貢献度スコアの内訳を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "確認するメンバー（省略すると自分）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/contribution report",
+      "description": "週次活動レポートを今すぐスタッフチャンネルに投稿します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/custom send",
+      "description": "カスタムコマンドを実行します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "name",
+          "desc": "実行するコマンド名"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/custom add",
+      "description": "カスタムコマンドを追加します（管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "name",
+          "desc": "コマンド名（半角英数字・ハイフン・アンダースコア、最大 30 文字）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/custom update",
+      "description": "カスタムコマンドを更新します（管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "name",
+          "desc": "更新するコマンド名"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/custom remove",
+      "description": "カスタムコマンドを削除します（管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "name",
+          "desc": "削除するコマンド名"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/custom list",
+      "description": "カスタムコマンド一覧を表示します（管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/digest enable",
+      "description": "週次ダイジェストを有効/無効にします",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/digest setup",
+      "description": "送信曜日・時刻・対象日数を設定します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "weekday",
+          "desc": "送信曜日（0=月〜6=日）"
+        },
+        {
+          "name": "hour_jst",
+          "desc": "送信時刻（JST、0〜23）"
+        },
+        {
+          "name": "inactive_days",
+          "desc": "この日数間アクティブでないメンバーを対象（デフォルト: 7）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/digest message",
+      "description": "カスタムメッセージを設定します（{user}/{server} が使えます）",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "message",
+          "desc": "DM本文テンプレート（None で i18n デフォルトに戻す）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/digest test",
+      "description": "自分宛てにテストダイジェストを送信します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/digest send-now",
+      "description": "今すぐ全対象メンバーにダイジェストを送信します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/digest status",
+      "description": "現在のダイジェスト設定を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/faq add",
+      "description": "FAQ エントリを追加します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/faq list",
+      "description": "FAQ 一覧を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/faq remove",
+      "description": "FAQ エントリを削除します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "faq_id",
+          "desc": "削除する FAQ の番号（/faq list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/faq test",
+      "description": "テキストに対してどの FAQ が反応するか確認します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "text",
+          "desc": "テストするテキスト"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/faq reaction-setup",
+      "description": "初回メッセージ自動リアクションを設定します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "有効 / 無効を切り替える"
+        },
+        {
+          "name": "emojis",
+          "desc": "リアクション絵文字（スペース区切りで最大 3 つ、例: 👋 🎉）"
+        },
+        {
+          "name": "channel",
+          "desc": "対象チャンネルをトグル追加 / 削除（未指定 = 全チャンネル対象）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/faq ai-setup",
+      "description": "FAQに一致しない質問へのAI自動回答を設定します",
+      "category": "AI機能",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "AIフォールバック回答を有効にする"
+        },
+        {
+          "name": "channel",
+          "desc": "対象チャンネルをトグル追加/削除（末尾が ? / ？ の質問のみ反応）"
+        },
+        {
+          "name": "daily_limit",
+          "desc": "1日あたりのAI回答上限回数"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/gcal link",
+      "description": "自分のGoogleカレンダーと連携します",
+      "category": "イベント",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/gcal unlink",
+      "description": "Googleカレンダーとの連携を解除します",
+      "category": "イベント",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/gcal status",
+      "description": "連携状態を表示します",
+      "category": "イベント",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/gcal digest",
+      "description": "毎朝の予定ダイジェストDMを設定します",
+      "category": "イベント",
+      "admin": false,
+      "params": [
+        {
+          "name": "hour_jst",
+          "desc": "送信時刻（JST、0〜23）。-1 で無効化"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/agenda",
+      "description": "Googleカレンダーの今後の予定を表示します",
+      "category": "イベント",
+      "admin": false,
+      "params": [
+        {
+          "name": "days",
+          "desc": "今日から何日分を表示するか（1〜14、デフォルト1）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/health inactive",
+      "description": "指定日数間アクティブでないメンバーを一覧表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "days",
+          "desc": "非アクティブとみなす日数（デフォルト: 30）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/health summary",
+      "description": "サーバーの活動分布サマリーを表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/health retention",
+      "description": "在籍期間ごとのアクティブ率（定着率）を分析します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "active_days",
+          "desc": "「アクティブ」とみなす直近の日数（デフォルト: 30）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/lang set",
+      "description": "Set your personal display language",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "language",
+          "desc": "Language to use"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/lang reset",
+      "description": "Reset to server default language",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/lang server",
+      "description": "Set the server default language (admin only)",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "language",
+          "desc": "Default language for this server"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/lang role",
+      "description": "国別ロールに表示言語を割り当てる（言語を省略すると解除・管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "対象のロール（国別ロールなど）"
+        },
+        {
+          "name": "language",
+          "desc": "割り当てる言語（省略するとこのロールの割り当てを解除）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/lang role-list",
+      "description": "ロール→言語の割り当て一覧（管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/lang status",
+      "description": "Show current language settings",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/dbbackup",
+      "description": "データベースを今すぐバックアップします（管理者専用）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/member info",
+      "description": "メンバーの詳細情報を表示します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "対象メンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/member note",
+      "description": "メンバーにスタッフメモを追加します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "対象メンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/member notes",
+      "description": "メンバーのスタッフメモ一覧を表示します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "対象メンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/member remove-note",
+      "description": "スタッフメモを削除します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "対象メンバー"
+        },
+        {
+          "name": "note_id",
+          "desc": "削除するメモの番号（/member notes で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/mod warn",
+      "description": "メンバーに警告を発行します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "警告対象メンバー"
+        },
+        {
+          "name": "reason",
+          "desc": "警告理由"
+        },
+        {
+          "name": "dm",
+          "desc": "DM で本人に通知するか（デフォルト: True）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/mod warnings",
+      "description": "メンバーの警告一覧を表示します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "対象メンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/mod clear",
+      "description": "メンバーの警告を全クリアします",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "user",
+          "desc": "対象メンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/mod setup",
+      "description": "モデレーション設定を変更します",
+      "category": "モデレーション",
+      "admin": true,
+      "params": [
+        {
+          "name": "warn_threshold",
+          "desc": "自動タイムアウトを発動する警告数（0 = 無効）"
+        },
+        {
+          "name": "timeout_minutes",
+          "desc": "自動タイムアウトの時間（分）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/monitor server",
+      "description": "サーバー全体の状態を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/monitor user",
+      "description": "個々のユーザーの状態を詳細表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "対象メンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/monitor system",
+      "description": "VPS・Botプロセス・ランタイムの状態を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/monitor api",
+      "description": "Gemini API の使用状況を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/news add",
+      "description": "ニュースの定時配信を追加します",
+      "category": "AI機能",
+      "admin": true,
+      "params": [
+        {
+          "name": "topic",
+          "desc": "話題（例: 生成AI、Jリーグ、京都 観光）"
+        },
+        {
+          "name": "channel",
+          "desc": "配信先チャンネル"
+        },
+        {
+          "name": "time",
+          "desc": "配信時刻（HH:MM、JST、例: 09:00）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/news remove",
+      "description": "ニュースの定時配信を削除します",
+      "category": "AI機能",
+      "admin": true,
+      "params": [
+        {
+          "name": "id",
+          "desc": "配信ID（/news list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/news list",
+      "description": "ニュースの定時配信一覧を表示します",
+      "category": "AI機能",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/news test",
+      "description": "ニュース配信を今すぐテスト実行します",
+      "category": "AI機能",
+      "admin": true,
+      "params": [
+        {
+          "name": "id",
+          "desc": "配信ID（/news list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding setup",
+      "description": "オンボーディングの基本設定を1画面で行います",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding enable",
+      "description": "オンボーディングフローを有効/無効にします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding completion-role",
+      "description": "完了時に付与するロールを設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "完了ロール"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding completion-announce",
+      "description": "完了時の公開アナウンスチャンネル/文を設定します（channel未指定で無効化）",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "アナウンス投稿先（未指定で無効化）"
+        },
+        {
+          "name": "message",
+          "desc": "アナウンス文（任意・{member}=メンション {server}=サーバー名）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding intro-channel",
+      "description": "自己紹介ステップの既定投稿先を設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "自己紹介を投稿するチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding panel",
+      "description": "オンボーディング開始パネルをチャンネルに投稿します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "投稿先チャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding welcome",
+      "description": "参加時の公開ウェルカム投稿を設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "channel",
+          "desc": "ウェルカム投稿先（有効化時は必須）"
+        },
+        {
+          "name": "message",
+          "desc": "投稿文（任意・{mention}{user}{server}）"
+        },
+        {
+          "name": "card",
+          "desc": "Pillowカード画像を添付するか（既定: True）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding welcome-test",
+      "description": "ウェルカム投稿を自分でテストします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding builder",
+      "description": "ステップをUIで追加・編集・並べ替え・削除します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding test",
+      "description": "自分宛てにオンボーディングをテスト実行します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding reset",
+      "description": "指定メンバーのオンボーディング進捗をリセットします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "進捗をリセットするメンバー"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding welcome-dm",
+      "description": "参加時の案内DMを設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "intro",
+          "desc": "導入文（任意・{user}=表示名 {server}=サーバー名。省略時は既定文）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding stats",
+      "description": "オンボーディングの統計を表示します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/onboarding list",
+      "description": "現在のオンボーディング設定を表示します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/task add",
+      "description": "タスクを追加します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "title",
+          "desc": "タスクの内容"
+        },
+        {
+          "name": "due_date",
+          "desc": "期限の日付（YYYY-MM-DD、任意）"
+        },
+        {
+          "name": "due_time",
+          "desc": "期限の時刻（HH:MM JST、省略時は 23:59）"
+        },
+        {
+          "name": "priority",
+          "desc": "優先度（デフォルト: 中）"
+        },
+        {
+          "name": "remind_minutes",
+          "desc": "期限の何分前にDMでリマインドするか（任意）"
+        },
+        {
+          "name": "add_to_calendar",
+          "desc": "Googleカレンダーにも登録する（/gcal link が必要）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/task list",
+      "description": "自分のタスク一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "include_done",
+          "desc": "完了済みも表示する"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/task done",
+      "description": "タスクを完了にします",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "task_id",
+          "desc": "タスク番号（/task list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/task remove",
+      "description": "タスクを削除します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "task_id",
+          "desc": "タスク番号（/task list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/poll",
+      "description": "その場でボタン投票を作成します",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "question",
+          "desc": "投票の質問文（最大 200 文字）"
+        },
+        {
+          "name": "options",
+          "desc": "選択肢をカンマ区切りで入力（2〜5 個）例: はい,いいえ,未定"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/poll-close",
+      "description": "投票を終了します（作成者または管理者）",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "poll_id",
+          "desc": "終了する投票の ID（投票フッターで確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/poll-list",
+      "description": "このサーバーのオープン中の投票一覧を表示します",
+      "category": "コミュニティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/pomodoro start",
+      "description": "VCでポモドーロを開始します（要VC参加）",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "work",
+          "desc": "作業時間（分、既定25）"
+        },
+        {
+          "name": "rest",
+          "desc": "休憩時間（分、既定5）"
+        },
+        {
+          "name": "cycles",
+          "desc": "サイクル数（既定4）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/pomodoro stop",
+      "description": "このVCのポモドーロを停止します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/pomodoro status",
+      "description": "このVCのポモドーロの状況を表示します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/role mass-assign",
+      "description": "条件に合うメンバー全員にロールを付与します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "付与するロール"
+        },
+        {
+          "name": "filter_role",
+          "desc": "このロールを持つメンバーのみ対象（省略 = 全員）"
+        },
+        {
+          "name": "min_days",
+          "desc": "入鯖日数の最小値（省略 = 制限なし）"
+        },
+        {
+          "name": "dry_run",
+          "desc": "実際には付与せず対象人数だけ確認（デフォルト: True）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/role mass-remove",
+      "description": "ロールを持つメンバー全員からロールを剥奪します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "剥奪するロール"
+        },
+        {
+          "name": "dry_run",
+          "desc": "実際には剥奪せず対象人数だけ確認（デフォルト: True）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/role audit",
+      "description": "ロール保持者の統計を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "role",
+          "desc": "監査するロール"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event create",
+      "description": "新しいイベントを作成します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "type",
+          "desc": "fixed=固定日時、doodle=候補日から選択"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event edit",
+      "description": "既存イベントを編集します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event target",
+      "description": "DM送信対象者を設定します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        },
+        {
+          "name": "type",
+          "desc": "対象の種類"
+        },
+        {
+          "name": "role",
+          "desc": "ロール対象の場合に指定"
+        },
+        {
+          "name": "member",
+          "desc": "個人対象の場合に指定（複数回実行で追加）"
+        },
+        {
+          "name": "tenure_days",
+          "desc": "在籍日数（tenure指定時）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event announce",
+      "description": "告知フォーラムにイベントを投稿します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event dm-survey",
+      "description": "対象者にDMでアンケートを送ります",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event bulk",
+      "description": "複数のイベントを一括でキャンセル・ステータス変更・対象者設定します",
+      "category": "イベント",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/event list",
+      "description": "イベント一覧を表示します",
+      "category": "イベント",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/event responses",
+      "description": "イベントの回答状況を確認します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event cancel",
+      "description": "イベントをキャンセルします",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        },
+        {
+          "name": "reason",
+          "desc": "キャンセル理由（告知メッセージの更新と通知DMに記載されます）"
+        },
+        {
+          "name": "notify",
+          "desc": "参加予定者にキャンセル通知DMを送るか（デフォルト: 送る）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event nudge",
+      "description": "未回答者に催促DMを手動送信します（何度でも実行可）",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event dm",
+      "description": "指定したイベントの参加者に任意の内容でDMを送信します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        },
+        {
+          "name": "target",
+          "desc": "送信対象（省略すると全対象者）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event remind",
+      "description": "参加予定者にリマインドDMを手動送信します（何度でも実行可）",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "イベント名で検索"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/template save",
+      "description": "イベントをテンプレートとして保存します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "event_id",
+          "desc": "テンプレート化するイベント"
+        },
+        {
+          "name": "name",
+          "desc": "テンプレート名（例: 毎週水曜定例会）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/template use",
+      "description": "テンプレートからイベントを作成します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "template_id",
+          "desc": "使用するテンプレート"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/template list",
+      "description": "保存済みテンプレート一覧を表示します",
+      "category": "イベント",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/template delete",
+      "description": "テンプレートを削除します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "template_id",
+          "desc": "削除するテンプレート"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/event trend",
+      "description": "過去イベントの参加率トレンドをグラフ表示します",
+      "category": "イベント",
+      "admin": true,
+      "params": [
+        {
+          "name": "count",
+          "desc": "表示するイベント数（デフォルト: 10、最大: 20）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/dashboard",
+      "description": "サーバーの現状を一覧表示します",
+      "category": "イベント",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/survey create",
+      "description": "新しいアンケートを作成します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "type",
+          "desc": "アンケートの種類"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/survey list",
+      "description": "アンケートの一覧を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/survey results",
+      "description": "アンケートの結果を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "survey_id",
+          "desc": "アンケート ID"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/survey close",
+      "description": "アンケートを終了します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "survey_id",
+          "desc": "終了するアンケート ID"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/ticket setup",
+      "description": "チケットシステムを設定します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "category",
+          "desc": "チケットチャンネルを作成するカテゴリー"
+        },
+        {
+          "name": "staff_role",
+          "desc": "チケットにアクセスできるスタッフロール"
+        },
+        {
+          "name": "log_channel",
+          "desc": "オープン/クローズを通知するチャンネル（省略可）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/ticket panel",
+      "description": "チケット開設パネルをチャンネルに投稿します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "投稿先チャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/ticket list",
+      "description": "オープン中のチケット一覧を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/ticket close",
+      "description": "現在のチャンネルのチケットをクローズします（管理者用）",
+      "category": "コミュニティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "Translate",
+      "description": "メッセージを翻訳して自分だけに表示します（右クリック→アプリ→🌐 Translate）",
+      "category": "AI機能",
+      "admin": false,
+      "params": [],
+      "type": "context_menu"
+    },
+    {
+      "name": "/translate",
+      "description": "テキストを翻訳します（自分だけに表示）",
+      "category": "AI機能",
+      "admin": false,
+      "params": [
+        {
+          "name": "text",
+          "desc": "翻訳したいテキスト"
+        },
+        {
+          "name": "to",
+          "desc": "翻訳先の言語（省略時は自分の表示言語 /lang）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/timer set",
+      "description": "タイマーを設定します（終了時にこのチャンネルでお知らせ）",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "minutes",
+          "desc": "分数（1〜1440）"
+        },
+        {
+          "name": "message",
+          "desc": "終了時に表示するメモ（任意）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/timer list",
+      "description": "設定中のタイマー一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/timer cancel",
+      "description": "タイマーをキャンセルします",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "timer_id",
+          "desc": "キャンセルするタイマー番号（/timer list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/timestamp",
+      "description": "Discord形式のタイムスタンプ（閲覧者のタイムゾーンで表示される日時）を生成します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "date",
+          "desc": "日付（YYYY-MM-DD、省略で今日）"
+        },
+        {
+          "name": "time",
+          "desc": "時刻（HH:MM、JST、省略で現在時刻）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/interpret join",
+      "description": "今いるVCに参加してリアルタイム字幕通訳を開始します",
+      "category": "AI機能",
+      "admin": false,
+      "params": [
+        {
+          "name": "to",
+          "desc": "字幕の言語（省略時は自分の表示言語 /lang）"
+        },
+        {
+          "name": "also",
+          "desc": "双方向にする2つ目の言語（指定すると to と also の間で自動方向判定）"
+        },
+        {
+          "name": "speak",
+          "desc": "ずんだもんの音声で翻訳を読み上げる（VC再生）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/interpret leave",
+      "description": "リアルタイム字幕通訳を停止してVCから退出します",
+      "category": "AI機能",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/vcstats ranking",
+      "description": "VC滞在時間ランキングを表示します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "period",
+          "desc": "集計期間（既定: 今週）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vcstats dashboard",
+      "description": "VC利用状況のダッシュボードを表示します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "period",
+          "desc": "集計期間（既定: 今月）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vcstats retention",
+      "description": "VC参加と定着の関係を分析します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/vc notify",
+      "description": "通話開始通知を設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "channel",
+          "desc": "通知を投稿するテキストチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc lobby",
+      "description": "一時VC作成用のロビーVCを設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "このVCに入ると専用の一時VCが作られます（未指定で無効化）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc lobby-add",
+      "description": "用途別の一時VCロビーを追加します（名前テンプレ・人数上限つき）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "ロビーにするVC"
+        },
+        {
+          "name": "name_template",
+          "desc": "作成VCの名前（{user}が入室者名に置換。例: 🎮 {user}のゲーム部屋）"
+        },
+        {
+          "name": "user_limit",
+          "desc": "作成VCの人数上限（0=無制限）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc lobby-remove",
+      "description": "用途別の一時VCロビーを削除します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "削除するロビーVC"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc lobby-list",
+      "description": "一時VCロビーの一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/vc intro-channel",
+      "description": "VC自己紹介カードの投稿先を設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "channel",
+          "desc": "自己紹介カードを投稿するテキストチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc welcome-setup",
+      "description": "初めてVCに参加したメンバーの歓迎通知を設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "channel",
+          "desc": "歓迎を投稿するチャンネル（未指定なら通話開始通知chを流用）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc milestone",
+      "description": "VC累計時間で付与するロールを設定します（role省略で解除）",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "hours",
+          "desc": "累計VC滞在時間（時間）"
+        },
+        {
+          "name": "role",
+          "desc": "付与するロール（省略するとこの時間のマイルストーンを解除）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc milestone-list",
+      "description": "設定中のVC時間マイルストーン一覧を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/vc record-announce",
+      "description": "同時接続の最高記録を更新したとき通知するか設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "channel",
+          "desc": "通知先チャンネル（未指定なら通話開始通知chを流用）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc livepanel",
+      "description": "「今VCにいる人」を自動更新表示するパネルを設置します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "channel",
+          "desc": "パネルを表示するテキストチャンネル"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc buddy-vc",
+      "description": "バディ同士が同じVCにいたら通知するか設定します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc afk-setup",
+      "description": "スピーカーオフが続くメンバーをAFKチャンネルへ自動移動します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "True=有効、False=無効"
+        },
+        {
+          "name": "timeout_min",
+          "desc": "移動までの分数（既定30）"
+        },
+        {
+          "name": "channel",
+          "desc": "移動先VC（未指定ならサーバーのAFKチャンネル）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc event-link",
+      "description": "VCをイベントに紐付け、開始時に参加予定者へDM通知します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "対象のVC"
+        },
+        {
+          "name": "event_id",
+          "desc": "イベントID（/event list で確認）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc event-unlink",
+      "description": "VCのイベント紐付けを解除します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "channel",
+          "desc": "対象のVC"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vc status",
+      "description": "VC支援機能の現在の設定を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/vc_intro",
+      "description": "VC参加時に表示される自己紹介カードを登録します",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "text",
+          "desc": "自己紹介文（最大500文字、「none」で削除）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/zzz",
+      "description": "指定した分数の経過後にVCから自動切断します（おやすみタイマー）",
+      "category": "ユーティリティ",
+      "admin": false,
+      "params": [
+        {
+          "name": "minutes",
+          "desc": "切断までの分数（1〜720、0でキャンセル）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/vps status",
+      "description": "CPU・メモリ・ディスク・ネットワーク・稼働時間を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/vps top",
+      "description": "CPU またはメモリ使用量が多いプロセス上位 10 件を表示します",
+      "category": "ユーティリティ",
+      "admin": true,
+      "params": [
+        {
+          "name": "sort_by",
+          "desc": "並び替え基準"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/followup setup",
+      "description": "フォローアップ DM を送るまでの日数を設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "days",
+          "desc": "入鯖から何日後に DM を送るか（0 で無効）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/followup message",
+      "description": "フォローアップ DM の本文を設定します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "content",
+          "desc": "DM 本文（{user} = 表示名、{server} = サーバー名 が使えます）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/followup test",
+      "description": "自分宛てにフォローアップ DM のテスト送信をします",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/followup status",
+      "description": "フォローアップ DM の現在の設定を表示します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    }
+  ]
+}

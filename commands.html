@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コマンド一覧 — Onboarding Bot</title>
+    <meta name="description" content="Onboarding Botの全スラッシュコマンドをカテゴリ別・検索で確認できます。オンボーディング・イベント・AI機能・コミュニティ・モデレーション・ユーティリティを網羅。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+</head>
+<body>
+    <div class="bg-aura"></div>
+
+    <!-- ナビゲーション -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="./">
+                <span class="logo-mark">🚀</span>
+                Onboarding Bot
+            </a>
+            <ul class="nav-links">
+                <li class="hide-sp"><a href="./#features">機能</a></li>
+                <li class="hide-sp"><a href="./#ai">AI機能</a></li>
+                <li class="hide-sp"><a href="./#trust">運用と安心</a></li>
+                <li><a href="./commands.html" class="btn btn-primary btn-sm active">コマンド一覧</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="page-head">
+        <div class="container">
+            <h1>コマンド一覧</h1>
+            <p id="page-desc">全181のスラッシュコマンドをカテゴリ別・検索で確認できます</p>
+        </div>
+    </header>
+
+    <!-- コマンド検索・一覧 -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="cmd-controls">
+                <div class="cmd-search">
+                    <span aria-hidden="true">🔍</span>
+                    <input type="text" id="cmd-search-input" placeholder="コマンド名・説明文で検索…" autocomplete="off">
+                </div>
+                <div class="cmd-tabs" id="cmd-tabs">
+                    <button type="button" class="cmd-tab active" data-category="すべて">すべて</button>
+                </div>
+            </div>
+            <div class="cmd-count" id="cmd-count"></div>
+            <div class="cmd-list" id="cmd-list"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Onboarding Bot — コミュニティ運営を自動化する多機能Discord Bot</p>
+        </div>
+    </footer>
+
+    <script src="./assets/commands.js"></script>
+</body>
+</html>
