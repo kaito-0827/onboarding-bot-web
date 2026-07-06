@@ -2496,6 +2496,23 @@
       ]
     },
     {
+      "name": "/starboard channels",
+      "description": "集計対象チャンネルを指定します（未指定=全チャンネル）",
+      "category": "コミュニティ",
+      "admin": true,
+      "type": "slash",
+      "params": [
+        {
+          "name": "channel",
+          "desc": "集計対象への追加/削除をトグルするチャンネル（省略で現在の一覧を表示）"
+        },
+        {
+          "name": "clear",
+          "desc": "True でチャンネル指定を全解除（全チャンネル集計に戻す）"
+        }
+      ]
+    },
+    {
       "name": "/starboard disable",
       "description": "スターボードを無効化します",
       "category": "コミュニティ",
