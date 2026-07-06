@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-05",
+  "generated": "2026-07-06",
   "categories": [
     "オンボーディング",
     "イベント",
@@ -2373,6 +2373,139 @@
       "admin": true,
       "params": [],
       "type": "slash"
+    },
+    {
+      "name": "/reactionrole add",
+      "description": "メッセージにリアクションロールを設定します",
+      "category": "コミュニティ",
+      "admin": true,
+      "type": "slash",
+      "params": [
+        {
+          "name": "message",
+          "desc": "対象メッセージのリンクまたはID（IDの場合はこのチャンネルが対象）"
+        },
+        {
+          "name": "emoji",
+          "desc": "リアクションに使う絵文字"
+        },
+        {
+          "name": "role",
+          "desc": "付与するロール"
+        }
+      ]
+    },
+    {
+      "name": "/reactionrole remove",
+      "description": "設定済みのリアクションロールを削除します",
+      "category": "コミュニティ",
+      "admin": true,
+      "type": "slash",
+      "params": [
+        {
+          "name": "message",
+          "desc": "対象メッセージのリンクまたはID（IDの場合はこのチャンネルが対象）"
+        },
+        {
+          "name": "emoji",
+          "desc": "削除するリアクションの絵文字"
+        }
+      ]
+    },
+    {
+      "name": "/reactionrole list",
+      "description": "設定済みのリアクションロール一覧を表示します",
+      "category": "コミュニティ",
+      "admin": false,
+      "type": "slash",
+      "params": []
+    },
+    {
+      "name": "/invites setup",
+      "description": "招待トラッキングを設定します（管理者）",
+      "category": "オンボーディング",
+      "admin": true,
+      "type": "slash",
+      "params": [
+        {
+          "name": "enabled",
+          "desc": "有効にするか"
+        },
+        {
+          "name": "log_channel",
+          "desc": "参加ログを投稿するチャンネル（任意）"
+        }
+      ]
+    },
+    {
+      "name": "/invites stats",
+      "description": "招待ランキングを表示します",
+      "category": "オンボーディング",
+      "admin": false,
+      "type": "slash",
+      "params": []
+    },
+    {
+      "name": "/invites who",
+      "description": "メンバーが誰の招待で参加したかを調べます",
+      "category": "オンボーディング",
+      "admin": false,
+      "type": "slash",
+      "params": [
+        {
+          "name": "member",
+          "desc": "調べる対象のメンバー"
+        }
+      ]
+    },
+    {
+      "name": "/invites me",
+      "description": "自分が招待した人数を確認します",
+      "category": "オンボーディング",
+      "admin": false,
+      "type": "slash",
+      "params": []
+    },
+    {
+      "name": "/starboard setup",
+      "description": "スターボードを設定・有効化します",
+      "category": "コミュニティ",
+      "admin": true,
+      "type": "slash",
+      "params": [
+        {
+          "name": "channel",
+          "desc": "転載先チャンネル"
+        },
+        {
+          "name": "threshold",
+          "desc": "殿堂入りに必要なリアクション数（1以上）"
+        },
+        {
+          "name": "emoji",
+          "desc": "集計対象の絵文字"
+        },
+        {
+          "name": "self_star",
+          "desc": "投稿者自身の⭐を数えるか"
+        }
+      ]
+    },
+    {
+      "name": "/starboard disable",
+      "description": "スターボードを無効化します",
+      "category": "コミュニティ",
+      "admin": true,
+      "type": "slash",
+      "params": []
+    },
+    {
+      "name": "/starboard status",
+      "description": "スターボードの現在の設定を表示します",
+      "category": "コミュニティ",
+      "admin": true,
+      "type": "slash",
+      "params": []
     }
   ]
 }
