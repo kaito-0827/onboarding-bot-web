@@ -414,6 +414,18 @@
         {
           "name": "enabled",
           "desc": "有効 / 無効を切り替える"
+        },
+        {
+          "name": "dm_notify",
+          "desc": "バディチャンネルの発言を相手にDM通知するか"
+        },
+        {
+          "name": "leave_cleanup",
+          "desc": "新規メンバー退出時に専用チャンネルを自動クローズするか"
+        },
+        {
+          "name": "first_contact_nudge_hours",
+          "desc": "初回コンタクトが無い場合にバディへリマインドするまでの時間（0=無効）"
         }
       ],
       "type": "slash"
@@ -501,6 +513,31 @@
     {
       "name": "/buddy list",
       "description": "バディ割り当て一覧を表示します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy unassign",
+      "description": "バディの割り当てを解除します",
+      "category": "オンボーディング",
+      "admin": true,
+      "params": [
+        {
+          "name": "member",
+          "desc": "バディ割り当てを解除する対象メンバー"
+        },
+        {
+          "name": "close_channel",
+          "desc": "専用チャンネルも削除するか（デフォルト: 削除する）"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/buddy stats",
+      "description": "バディシステムの統計情報を表示します",
       "category": "オンボーディング",
       "admin": true,
       "params": [],
