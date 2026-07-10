@@ -2052,6 +2052,39 @@
       "type": "slash"
     },
     {
+      "name": "/minutes start",
+      "description": "VC議事録の記録を開始します",
+      "category": "AI機能",
+      "admin": false,
+      "params": [
+        {
+          "name": "post_to",
+          "desc": "議事録の投稿先（省略時はVCのテキストチャット）"
+        },
+        {
+          "name": "live",
+          "desc": "文字起こしをリアルタイムでVCチャットに流すか"
+        }
+      ],
+      "type": "slash"
+    },
+    {
+      "name": "/minutes stop",
+      "description": "VC議事録の記録を終了し、議事録を作成します",
+      "category": "AI機能",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
+      "name": "/minutes status",
+      "description": "VC議事録の記録状況を表示します",
+      "category": "AI機能",
+      "admin": false,
+      "params": [],
+      "type": "slash"
+    },
+    {
       "name": "/vcstats ranking",
       "description": "VC滞在時間ランキングを表示します",
       "category": "ユーティリティ",
